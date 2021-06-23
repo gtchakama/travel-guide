@@ -1,7 +1,8 @@
 import React from "react";
-import { Card, ListGroup, ListGroupItem, Row, Col } from "react-bootstrap";
+
 import SpinnerIcon from "./SpinnerIcon";
 import uuid from "react-uuid";
+import Typography from "@material-ui/core/Typography";
 import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: "center",
+    textAlign: "left",
     color: theme.palette.text.secondary,
   },
 }));
@@ -27,102 +28,77 @@ const Country = ({ country, isLoading }) => {
   }
 
   return (
-    <div>
-      <Container>
-        <div className={classes.root}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>xs=12</Paper>
-            </Grid>
-            <Grid item xs={6}>
-              <Paper className={classes.paper}> </Paper>
-            </Grid>
-            <Grid item xs={6}>
-              <Paper className={classes.paper}>xs=6</Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>xs=3</Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>xs=3</Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>xs=3</Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper className={classes.paper}>xs=3</Paper>
-            </Grid>
+    <Container>
+      <div className={classes.root}>
+        <Grid container spacing={3}>
+          {/* <Grid item xs={12}>
+            <Paper className={classes.paper}>xs=12</Paper>
+          </Grid> */}
+
+          <Grid item xs={6}>
+            <Paper className={classes.paper}>
+              <Typography variant="h3" gutterBottom>
+                Country Name: {country.name}
+              </Typography>
+              <Typography variant="h5" gutterBottom>
+                Capital: {country.capital}
+              </Typography>
+              <Typography variant="h5" gutterBottom>
+                Region: {country.region}
+              </Typography>
+              <img
+                src={country.flag}
+                style={{ width: "100%" }}
+                alt=""
+                srcset=""
+              />
+              <Typography variant="body1" gutterBottom>
+                <h3>Languages</h3>
+                {country.languages.map((language) => {
+                  return (
+                    <div key={uuid()}>
+                      <p>Name: {language.name}</p>
+                      <p>Native Name: {language.nativeName}</p>
+                    </div>
+                  );
+                })}
+              </Typography>
+            </Paper>
           </Grid>
-        </div>
-      </Container>
-    </div>
+          <Grid item xs={6}>
+            <Paper className={classes.paper}>
+              <Typography variant="h5" gutterBottom>
+                Population: {country.population}
+              </Typography>
+              <h3>Total Borders: {country.borders.length}</h3>
+              {country.borders.map((border) => {
+                return (
+                  <div key={uuid()}>
+                    <ul>
+                      <li>{border}</li>
+                    </ul>
+                  </div>
+                );
+              })}
 
-    //     /* <h4>Get to know the most important information about every countries in the word</h4>
-    //     <Card style={{ width: '100%' }}>
-    //         <Card.Img variant="top" src={country.flag} />
-    //         <Card.Body>
-    //             <Card.Title>Country Name: {country.name}</Card.Title>
-
-    //         </Card.Body>
-
-    //         <ListGroupItem>
-    //             <div className='p-4'>
-    //                 <h3> Languages</h3>
-    //                 {country.languages.map((language) => {
-    //                     return (
-    //                         <div key={uuid()}>
-
-    //                             <p>Name: {language.name}</p>
-    //                             <p>Native Name: {language.nativeName}</p>
-
-    //                         </div>
-    //                     )
-    //                 })}
-    //             </div>
-
-    //         </ListGroupItem>
-
-    //         <ListGroup className="list-group-flush">
-    //             <ListGroupItem>Calling-Code: {country.callingCodes}</ListGroupItem>
-    //             <ListGroupItem><span className='h3'>Population: {country.population}</span></ListGroupItem>
-    //             <ListGroupItem>Capital: {country.capital}</ListGroupItem>
-    //             <ListGroupItem>Region: {country.region}</ListGroupItem>
-    //             <ListGroupItem>Time-Zone: {country.timeZone}</ListGroupItem>
-
-    //         </ListGroup>
-    //         <ListGroupItem>Sub-Region: {country.subregion}</ListGroupItem>
-    //         <ListGroupItem>
-    //             <div className='p-4'>
-
-    //                 <h3>Total Borders: {country.borders.length}</h3>
-    //                 {country.borders.map((border) => {
-    //                     return (
-    //                         <div key={uuid()}>
-    //                             <ul>
-    //                                 <li>{border}</li>
-    //                             </ul>
-    //                         </div>
-    //                     )
-    //                 })}
-    //             </div>
-
-    //         </ListGroupItem>
-    //         <ListGroupItem>
-    //             <div className='p-4'>
-    //                 <h3>Currencies</h3>
-    //                 {country.currencies.map((currency) => {
-    //                     return (
-    //                         <div key={uuid()}>
-    //                             <p>Code: {currency.code}</p>
-    //                             <p>Name: {currency.name}</p>
-    //                             <p>Symbol: {currency.symbol}</p>
-    //                         </div>
-    //                     )
-    //                 })}
-    //             </div>
-    //         </ListGroupItem>
-    //     </Card>
-    //   </div>
+              <Typography variant="h5" gutterBottom>
+                Currencies
+              </Typography>
+              <div>
+                {country.currencies.map((currency) => {
+                  return (
+                    <ul key={uuid()}>
+                      <li>Name: {currency.name}</li>
+                      <li>Symbol: {currency.symbol}</li>
+                    </ul>
+                  );
+                })}
+              </div>
+            </Paper>
+          </Grid>
+        </Grid>
+      </div>
+    </Container>
   );
 };
 
