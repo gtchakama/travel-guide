@@ -4,18 +4,22 @@ import SpinnerIcon from "./SpinnerIcon";
 import uuid from "react-uuid";
 import Typography from "@material-ui/core/Typography";
 import { Container } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    marginTop: "100px",
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: "left",
     color: theme.palette.text.secondary,
+  },
+  paper2: {
+    width: "100%",
   },
 }));
 
@@ -37,7 +41,7 @@ const Country = ({ country, isLoading }) => {
 
           <Grid item xs={6}>
             <Paper className={classes.paper}>
-              <Typography variant="h3" gutterBottom>
+              <Typography variant="h4" gutterBottom>
                 Country Name: {country.name}
               </Typography>
               <Typography variant="h5" gutterBottom>
@@ -46,12 +50,14 @@ const Country = ({ country, isLoading }) => {
               <Typography variant="h5" gutterBottom>
                 Region: {country.region}
               </Typography>
-              <img
-                src={country.flag}
-                style={{ width: "100%" }}
-                alt=""
-                srcset=""
-              />
+              <Paper className={classes.paper2}>
+                <img
+                  src={country.flag}
+                  style={{ width: "100%" }}
+                  alt=""
+                  srcset=""
+                />
+              </Paper>
               <Typography variant="body1" gutterBottom>
                 <h3>Languages</h3>
                 {country.languages.map((language) => {
