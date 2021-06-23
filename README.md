@@ -1,5 +1,5 @@
 
-# Travel Guide 🌍(Web Version)
+# Travel Guide 🌍(SPA)
  _Travel_ information to inspire global travellers.
 
 # Features🪂:
