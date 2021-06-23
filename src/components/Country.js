@@ -1,3 +1,4 @@
+import "../App.css";
 import React from "react";
 
 import SpinnerIcon from "./SpinnerIcon";
@@ -7,6 +8,8 @@ import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import GitHubIcon from '@material-ui/icons/GitHub';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,36 +38,36 @@ const Country = ({ country, isLoading }) => {
     <Container>
       <div className={classes.root}>
         <Grid container spacing={3}>
-          {/* <Grid item xs={12}>
-            <Paper className={classes.paper}>xs=12</Paper>
-          </Grid> */}
-
           <Grid item xs={6}>
             <Paper className={classes.paper}>
               <Typography variant="h4" gutterBottom>
-                Country Name: {country.name}
+                <span>Country Name:</span> {country.name}
               </Typography>
               <Typography variant="h5" gutterBottom>
-                Capital: {country.capital}
+                <span>Capital:</span> {country.capital}
               </Typography>
               <Typography variant="h5" gutterBottom>
-                Region: {country.region}
+                <span>Region:</span> {country.region}
               </Typography>
               <Paper className={classes.paper2}>
                 <img
                   src={country.flag}
                   style={{ width: "100%" }}
-                  alt=""
+                  alt="Flag"
                   srcset=""
                 />
               </Paper>
               <Typography variant="body1" gutterBottom>
-                <h3>Languages</h3>
+                <h3>Languages: {country.languages.length}</h3>
                 {country.languages.map((language) => {
                   return (
                     <div key={uuid()}>
-                      <p>Name: {language.name}</p>
-                      <p>Native Name: {language.nativeName}</p>
+                      <p>
+                        <span>Name:</span> {language.name}
+                      </p>
+                      <p>
+                        <span>Native Name:</span> {language.nativeName}
+                      </p>
                     </div>
                   );
                 })}
@@ -74,9 +77,11 @@ const Country = ({ country, isLoading }) => {
           <Grid item xs={6}>
             <Paper className={classes.paper}>
               <Typography variant="h5" gutterBottom>
-                Population: {country.population}
+                <span>Population:</span> {country.population}
               </Typography>
-              <h3>Total Borders: {country.borders.length}</h3>
+              <h3>
+                <span>Total Borders:</span> {country.borders.length}
+              </h3>
               {country.borders.map((border) => {
                 return (
                   <div key={uuid()}>
@@ -88,7 +93,7 @@ const Country = ({ country, isLoading }) => {
               })}
 
               <Typography variant="h5" gutterBottom>
-                Currencies
+                <span>Currencies: </span> {country.currencies.length}
               </Typography>
               <div>
                 {country.currencies.map((currency) => {
@@ -100,6 +105,17 @@ const Country = ({ country, isLoading }) => {
                   );
                 })}
               </div>
+            </Paper>
+            <Paper className={classes.paper}>
+              <Typography
+               
+                variant="body2"
+                gutterBottom
+              >
+                A project By George
+              </Typography>
+              <GitHubIcon/>
+              <TwitterIcon/>
             </Paper>
           </Grid>
         </Grid>

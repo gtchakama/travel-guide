@@ -11,9 +11,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   title: {
     flexGrow: 1,
     display: "none",
@@ -76,31 +73,29 @@ const SearchForm = ({ SetSearchTerm }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed">
-        <Toolbar>
-          <Typography className={classes.title} variant="h5" noWrap>
-            Travel Guide
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              type="text"
-              placeholder="Enter Country"
-              value={inputText}
-              onChange={handleInputChange}
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
+    <AppBar position="fixed">
+      <Toolbar>
+        <Typography className={classes.title} variant="h5" noWrap>
+          Travel Guide
+        </Typography>
+        <div className={classes.search}>
+          <div className={classes.searchIcon}>
+            <SearchIcon />
           </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+          <InputBase
+            type="text"
+            placeholder="Enter Country"
+            value={inputText}
+            onChange={handleInputChange}
+            classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput,
+            }}
+            inputProps={{ "aria-label": "search" }}
+          />
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 };
 
