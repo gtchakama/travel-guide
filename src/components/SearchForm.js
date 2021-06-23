@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Col, Row, Container } from "react-bootstrap";
+import { Form, Col, Row } from "react-bootstrap";
+import { Container } from '@material-ui/core';
 
 
 const SearchForm = ({ SetSearchTerm }) => {

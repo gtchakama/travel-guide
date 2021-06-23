@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from '@material-ui/core';
 import { Navbar, Nav } from "react-bootstrap";
 
 
@@ -6,6 +7,7 @@ import { Navbar, Nav } from "react-bootstrap";
 const Header = () => {
     return (
 
+        <Container>
         <Navbar collapseOnSelect expand="lg" style={{ background: 'green', padding: 10, fontSize: 20 }} variant="dark">
             <Navbar.Brand href="/">Travel Guide</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -22,6 +24,7 @@ const Header = () => {
                 </Nav> */}
             </Navbar.Collapse>
         </Navbar>
+        </Container>
 
     );
 }

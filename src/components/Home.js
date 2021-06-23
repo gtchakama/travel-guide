@@ -7,7 +7,7 @@ import axios from "axios";
 const Home = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [country, setCountry] = useState([])
-    const [searchTerm, SetSearchTerm] = useState('ghana');
+    const [searchTerm, SetSearchTerm] = useState('south africa');
 
     useEffect(() => {
         setIsLoading(true)
