@@ -8,7 +8,9 @@
  3. Know the surrounding Borders
 
 # Hosted on Firebase(🔥):
-https:// -----  .web.app/
+
+https://travel-guide1.web.app/
+
 
 # Getting started😉:
 ```
@@ -20,10 +22,14 @@ https:// -----  .web.app/
 
 # Screenshots📼:
 
- Homepage
- 
-[ To Be Added after project complition ]
+## Homepage
 
+![landing](https://user-images.githubusercontent.com/37905683/124761982-aa182500-df32-11eb-8828-df13f4f86071.png)
+
+
+## Score
+![score](https://user-images.githubusercontent.com/37905683/124761988-ac7a7f00-df32-11eb-9710-b001f74dc57a.png) 
+ 
 
 
 # Tech Stack Used💡:
