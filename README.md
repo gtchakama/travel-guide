@@ -15,7 +15,7 @@ https://travel-guide1.web.app/
 # Getting started😉:
 ```
 > git clone 'https://github.com/gtchakama/travel-guide'
-> cd thoughtly
+> cd travel-guide
 > npm install
 > npm start
 ```
