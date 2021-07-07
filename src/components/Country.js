@@ -8,8 +8,9 @@ import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import GitHubIcon from '@material-ui/icons/GitHub';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import GitHubIcon from "@material-ui/icons/GitHub";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,7 +39,7 @@ const Country = ({ country, isLoading }) => {
     <Container>
       <div className={classes.root}>
         <Grid container spacing={3}>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <Paper className={classes.paper}>
               <Typography variant="h4" gutterBottom>
                 <span>Country Name:</span> {country.name}
@@ -73,8 +74,7 @@ const Country = ({ country, isLoading }) => {
                 })}
               </Typography>
             </Paper>
-          </Grid>
-          <Grid item xs={6}>
+
             <Paper className={classes.paper}>
               <Typography variant="h5" gutterBottom>
                 <span>Population:</span> {country.population}
@@ -107,15 +107,15 @@ const Country = ({ country, isLoading }) => {
               </div>
             </Paper>
             <Paper className={classes.paper}>
-              <Typography
-               
-                variant="body2"
-                gutterBottom
-              >
+              <Typography variant="body2" gutterBottom>
                 A project By George
               </Typography>
-              <GitHubIcon/>
-              <TwitterIcon/>
+              <Link href="https://github.com/gtchakama" target="_blank">
+                <GitHubIcon />
+              </Link>
+              <Link href="https://twitter.com/gtchakama" target="_blank">
+                <TwitterIcon />
+              </Link>
             </Paper>
           </Grid>
         </Grid>
